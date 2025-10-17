@@ -1,16 +1,18 @@
 # Introduction
 
-## The ICCS^[For more details see poster 14 *International RSE collaboration with the ICCS and the VESRI*] {.smaller}
+## The ICCS
+
+<!-- ! ## The ICCS^[For more details see poster 14 *International RSE collaboration with the ICCS and the VESRI*] {.smaller} -->
 
 The Institute of Computing for Climate Science
 
 * Domain-specific RSE group based at the University of Cambridge
-* Embedded support to several international climate science projects
+* Embedded support to several international climate science projects 
 
 ![]( ./images/iccs/ICCS_streams.png){fig-align="center"}
 
 ::: {.notes}
-My background in this is ML and numerical modelling on HPC.
+My background in this is ML and numerical modelling on HPC. 
 :::
 
 
@@ -18,7 +20,7 @@ My background in this is ML and numerical modelling on HPC.
 
 ## Weather and Climate Models {.smaller}
 
-Large, complex, many-part systems.
+Large, complex, many-part systems. 
 <br>
 
 ![]( ./images/Climate_Models.svg )
@@ -50,8 +52,8 @@ Subgrid processes are largest source of uncertainty
 Microphysics by Sisi Chen Public Domain\
 Staggered grid by NOAA under Public Domain\
 Globe grid with box by Caltech under Fair use
+kkkkkk
 :::
-
 
 ## Machine Learning in Science {.smaller}
 

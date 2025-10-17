@@ -25,7 +25,7 @@ authors:
   # - name: Joe Wallwork
   #   orcid: 0000-0002-3646-091X
   #   affiliations: Senior Research Software Engineer <br> ICCS - University of Cambridge
-date: "2025-10-17"
+date: "2025-10-23"
 bibliography: climate_references.bib
 include-in-header:
   - text: |
@@ -122,17 +122,17 @@ include-in-header:
 Get in touch:
 :::
 ::: {.column style="width: 40%; font-size: 85%;"}
-{{< fa pencil >}} \ Jack Atkinson
+{{< fa pencil >}} \ Matt Archer
 
-{{< fa solid globe >}} \ [jackatkinson.net](https://jackatkinson.net)
+<!-- {{< fa solid globe >}} \ [jackatkinson.net](https://jackatkinson.net) -->
 
-{{< fa solid envelope >}} \ [jwa34[AT]cam.ac.uk](mailto:jwa34@cam.ac.uk)
+{{< fa solid envelope >}} \ [ma595[AT]cam.ac.uk](mailto:jwa34@cam.ac.uk)
 
-{{< fa brands github >}} \ [jatkinson1000](https://github.com/jatkinson1000)
+{{< fa brands github >}} \ [ma595](https://github.com/ma595)
 
-{{< fa brands mastodon >}} \ [\@jatkinson1000\@hachyderm.io](https://hachyderm.io/@jatkinson1000)
+<!-- {{< fa brands mastodon >}} \ [\@jatkinson1000\@hachyderm.io](https://hachyderm.io/@jatkinson1000) -->
 :::
-::: {.column style="width: 40%; font-size: 85%;"}
+<!-- ::: {.column style="width: 40%; font-size: 85%;"}
 {{< fa pencil >}} \ Joe Wallwork
 
 {{< fa solid globe >}} \ [joewallwork.com](https://joewallwork.com)
@@ -140,7 +140,7 @@ Get in touch:
 {{< fa solid envelope >}} \ [jw2423[AT]cam.ac.uk](mailto:jw2423@cam.ac.uk)
 
 {{< fa brands github >}} \ [jwallwork23](https://github.com/jwallwork23)
-:::
+::: -->
 ::::
 
 \
@@ -148,7 +148,7 @@ Get in touch:
 :::: {.columns}
 
 ::: {.column style="width:70%;"}
-Thanks to Jack Atkinson, Tom Metlzer, Elliott Kasoar, Niccolò Zanotti\
+Thanks to Jack Atkinson, Tom Meltzer, Elliott Kasoar, Niccolò Zanotti\
 and the rest of the FTorch team.
 
 The ICCS received support from ![]( ./images/logos/schmidt_science.png ){height=2.4em style="margin: 0; vertical-align: -2%"}
