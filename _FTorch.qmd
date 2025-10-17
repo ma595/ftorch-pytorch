@@ -93,6 +93,7 @@ TorchScript is a statically typed subset of Python
 :::
 
 
+
 ## Efficiency {auto-animate=true, .smaller}
 
 We consider 2 types:
@@ -220,24 +221,22 @@ Find it on {{< fa brands github >}}:
 ## Highlights - Developer {.smaller}
 
 :::: {.columns}
-::: {.column width="65%"}
-- User tools
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
+
+- User tools  
   - [`pt2ts.py`](https://github.com/Cambridge-ICCS/FTorch/tree/main/utils) aids users in saving PyTorch models to Torchscript
 
-:::{.fragment}
-- Examples suite
+- Examples suite  
   - Take users through full process from trained net to Fortran inference
-:::
-:::{.fragment}
+
 - Full API documentation online at\
   [cambridge-iccs.github.io/FTorch](https://cambridge-iccs.github.io/FTorch/)
-:::
-:::{.fragment}
-- FOSS
-  - licensed under MIT
+
+- FOSS  
+  - licensed under MIT  
   - contributions from users via GitHub welcome
 :::
-:::
+
 ::: {.column width="35%"}
 Find it on {{< fa brands github >}}:
 
@@ -251,20 +250,16 @@ Find it on {{< fa brands github >}}:
 ## Highlights - Computation {.smaller auto-animate=true}
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
 
-:::{.fragment}
-- Use framework's implementations directly
+- Use framework's implementations directly  
   - feature and future support, and reproducible
-:::
-:::{.fragment}
+
 - Make use of the Torch backends for GPU offload
   - CUDA, HIP, MPS, and XPU enabled
-:::
-:::{.fragment}
+
 - Indexing issues and associated reshape^[Or, the great row-major, column-major headache.] avoided with Torch strided accessor.
 - No-copy access in memory (on CPU).
-:::
 
 :::
 ::: {.column width="35%"}
