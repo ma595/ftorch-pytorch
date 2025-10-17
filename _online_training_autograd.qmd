@@ -68,8 +68,6 @@ print *, dQdb_arr
 ``` -->
 
 
-## Optimizers and loss functions {.smaller}
-
 * Optimizers
     * Expose `torch::optim::SGD`, `torch::optim::AdamW` etc., as well as
       `zero_grad` and `step` methods.
