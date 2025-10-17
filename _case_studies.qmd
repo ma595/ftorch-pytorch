@@ -1,7 +1,37 @@
-# Applications and Case Studies
+## FTorch in Action {.smaller auto-animate=true}
+
+:::: {.columns style="gap: 2em;"}
+
+::: {.column width="50%"}
+::: {.fragment .semi-fade-out}
+### 🌍 MiMA – Proof of Concept {style="font-size: 1.1em;"}
+
+- First use of FTorch ideas  
+- Machine-learning parameterisation in a simple climate model  
+- Showed feasibility but exposed **speed** and **integration** limits  
+- Led to creation of FTorch for reusable, efficient coupling
+
+[{{< fa brands github >}}/DataWaveProject/MiMA-machine-learning](https://github.com/DataWaveProject/MiMA-machine-learning)
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment}
+### ☁️ CESM – Large-Scale Integration {style="font-size: 1.1em;"}
+
+- FTorch now part of **Community Earth System Model (CESM)**  
+- Integrated via **CIME** build system  
+- **libtorch** available on NCAR’s *Derecho* supercomputer  
+- Enables reproducible ML parameterisations at climate scale  
+
+![](https://www.hpcwire.com/wp-content/uploads/2022/03/derecho-ncar-render.png){style="margin-top: 0.5em; border-radius: 8px;" width="95%"}
+:::
+:::
+::::
 
 
-## MiMA - proof of concept {.smaller}
+
+<!-- ## MiMA - proof of concept {.smaller}
 
 - The origins of FTorch
   - Emulation of existing parameterisation
@@ -15,9 +45,7 @@
   - "Identical" offline networks have very different behaviours when deployed online.
 
 ::: aside
-Model of an idealised Moist Atmosphere online at [{{< fa brands github >}}/DataWaveProject/MiMA-machine-learning](https://github.com/DataWaveProject/MiMA-machine-learning)
-:::
-
+Model of an idealised Moist Atmosphere online at [{{< fa brands github >}}/DataWaveProject/MiMA-machine-learning](https://github.com/DataWaveProject/MiMA-machine-learning) -->
 
 <!-- ## ICON {.smaller}
 
@@ -65,7 +93,7 @@ ICON Model is now available at [gitlab.dkrz.de/icon/icon-model](https://gitlab.d
 </div>
  -->
 
-
+<!-- 
 ## CESM coupling {.smaller}
 
 - The Community Earth System Model
@@ -85,7 +113,7 @@ CIME with FTorch is available with instructions [{{< fa brands github >}}/Cambri
 
 :::{.attribution}
 Derecho by NCAR
-:::
+::: -->
 
 
 ## Others {.smaller}
