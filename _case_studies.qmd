@@ -116,7 +116,7 @@ Derecho by NCAR
 ::: -->
 
 
-## Others {.smaller}
+<!-- ## Others {.smaller}
 
 ::::{.columns style="font-size: 90%;"}
 :::{.column style="width: 45%"}
@@ -141,4 +141,4 @@ Derecho by NCAR
 - Embedding of ML schemes for gravity waves in the `CAM` model.\
   ICCS & DataWave.
 :::
-::::
+:::: -->
