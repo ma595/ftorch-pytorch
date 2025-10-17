@@ -19,7 +19,7 @@ Model of an idealised Moist Atmosphere online at [{{< fa brands github >}}/DataW
 :::
 
 
-## ICON {.smaller}
+<!-- ## ICON {.smaller}
 
 - Icosahedral Nonhydrostatic Weather and Climate Model
   - Developed by DKRZ (Deutsches Klimarechenzentrum)
@@ -63,7 +63,7 @@ ICON Model is now available at [gitlab.dkrz.de/icon/icon-model](https://gitlab.d
           marker-end="url(#arrowhead)" />
   </svg>
 </div>
-
+ -->
 
 
 ## CESM coupling {.smaller}
