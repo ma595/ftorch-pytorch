@@ -3,39 +3,9 @@
 // FONTS
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono');
 
-/* Import Maple Mono font */
-$font-path: '/fonts/';
-
-@mixin font-face-maple($weight, $style, $file) {
-  @font-face {
-    font-family: 'Maple Mono';
-    src: url("#{$font-path}/Maple_Mono/#{$file}.ttf.woff2") format('woff2');
-    font-weight: $weight;
-    font-style: $style;
-    font-display: swap;
-  }
-}
-
-@include font-face-maple(100, normal, 'MapleMonoNormal-Thin');
-@include font-face-maple(200, normal, 'MapleMonoNormal-ExtraLight');
-@include font-face-maple(300, normal, 'MapleMonoNormal-Light');
-@include font-face-maple(400, normal, 'MapleMonoNormal-Regular');
-@include font-face-maple(500, normal, 'MapleMonoNormal-Medium');
-@include font-face-maple(600, normal, 'MapleMonoNormal-SemiBold');
-@include font-face-maple(700, normal, 'MapleMonoNormal-Bold');
-@include font-face-maple(800, normal, 'MapleMonoNormal-ExtraBold');
-@include font-face-maple(100, italic, 'MapleMonoNormal-ThinItalic');
-@include font-face-maple(200, italic, 'MapleMonoNormal-ExtraLightItalic');
-@include font-face-maple(300, italic, 'MapleMonoNormal-LightItalic');
-@include font-face-maple(400, italic, 'MapleMonoNormal-Italic');
-@include font-face-maple(500, italic, 'MapleMonoNormal-MediumItalic');
-@include font-face-maple(600, italic, 'MapleMonoNormal-SemiBoldItalic');
-@include font-face-maple(700, italic, 'MapleMonoNormal-BoldItalic');
-@include font-face-maple(800, italic, 'MapleMonoNormal-ExtraBoldItalic');
-
 // $font-family-sans-serif: JetBrains Mono, sans-serif !default;
 // $presentation-heading-font: "JetBrains Mono", sans-serif !default;
-$presentation-heading-font: "Maple Mono", "JetBrains Mono", sans-serif !default;
+$presentation-heading-font: "JetBrains Mono", sans-serif !default;
 
 // Custom colours and variables
 $jet: #131516;
