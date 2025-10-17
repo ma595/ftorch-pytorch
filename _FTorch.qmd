@@ -188,17 +188,15 @@ used under [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)
 ![](https://www.freepngimg.com/thumb/youtube/77810-arrows-marketing-youtube-arrow-red-free-transparent-image-hq.png){style="transform: scaleY(-1) rotate(130deg); filter:hue-rotate(150deg);" .absolute top=37% left=78% width="35%" height="20%"}
 :::
 
-
-## Highlights - Developer {.smaller}
+<!-- 
+## Highlights - Developer {.smaller auto-animate=true}
 
 :::: {.columns}
-::: {.column width="65%"}
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
 
-:::{.fragment}
 - Easy to clone and install
   - CMake, supported on linux/unix and Windows&#8482;
-:::
-:::{.fragment}
+
 - Easy to link
   - Build using CMake,
   - or link via Make like NetCDF (instructions included)\
@@ -208,7 +206,6 @@ used under [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)
     ```
 
 :::
-:::
 ::: {.column width="35%"}
 Find it on {{< fa brands github >}}:
 
@@ -216,12 +213,16 @@ Find it on {{< fa brands github >}}:
 
 [{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
 :::
-::::
+:::: -->
 
 ## Highlights - Developer {.smaller}
 
 :::: {.columns}
 ::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
+
+::: {.fragment}
+- Easy to build and link using CMake,
+  - or link via Make like NetCDF
 
 - User tools  
   - [`pt2ts.py`](https://github.com/Cambridge-ICCS/FTorch/tree/main/utils) aids users in saving PyTorch models to Torchscript
@@ -236,7 +237,7 @@ Find it on {{< fa brands github >}}:
   - licensed under MIT  
   - contributions from users via GitHub welcome
 :::
-
+:::
 ::: {.column width="35%"}
 Find it on {{< fa brands github >}}:
 
@@ -251,16 +252,17 @@ Find it on {{< fa brands github >}}:
 
 :::: {.columns}
 ::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
-
+::: {.fragment}
 - Use framework's implementations directly  
   - feature and future support, and reproducible
 
 - Make use of the Torch backends for GPU offload
-  - CUDA, HIP, MPS, and XPU enabled
+  - `CUDA`, `HIP`, `MPS`, and `XPU` enabled
 
 - Indexing issues and associated reshape^[Or, the great row-major, column-major headache.] avoided with Torch strided accessor.
 - No-copy access in memory (on CPU).
 
+:::
 :::
 ::: {.column width="35%"}
 Find it on {{< fa brands github >}}:
@@ -292,9 +294,7 @@ Find it on {{< fa brands github >}}:
 ::::
 
 
-# Some code
-
-## Model - Saving from Python {.smaller}
+## Model - Saving model from Python {.smaller}
 
 ```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"}
 import torch
@@ -395,7 +395,7 @@ Pointer slinging is largely hidden from users.
 Data transposition is taken care of by us (but options available for users to handle).
 ::: -->
 
-
+<!-- 
 ## Publication & tutorials {.smaller}
 
 
@@ -422,5 +422,5 @@ _Journal of Open Source Software_, 10(107), 7602,\
 \
 
 In addition to the comprehensive examples in the FTorch repository we
-provide an online workshop at [{{< fa brands github >}}/Cambridge-ICCS/FTorch-workshop](https://github.com/Cambridge-ICCS/FTorch-workshop)
+provide an online workshop at [{{< fa brands github >}}/Cambridge-ICCS/FTorch-workshop](https://github.com/Cambridge-ICCS/FTorch-workshop) -->
 
