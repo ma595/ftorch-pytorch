@@ -1,0 +1,104 @@
+## Online training and autograd {.smaller}
+
+Work led by [Joe Wallwork](https://joewallwork.com/)
+
+To date FTorch has focussed on enabling researchers to run models
+developed and trained offline within Fortran codes.
+
+However, it is clear [@mansfield2024uncertainty] that more attention to
+online performance, and options with differentiable/hybrid models [e.g. @kochkov2024neural] is becoming important.
+
+#### Pros:
+
+* Avoids saving large volumes of training data.
+* Avoids need to convert between Python and Fortran data formats.
+* Possibility to expand loss function scope to include downstream model code.
+
+#### Cons:
+
+* Difficult to implement in most frameworks.
+
+
+## Expanded Loss function {.smaller}
+
+Suppose we want to use a loss function involving downstream model code, e.g.,
+
+$$J(\theta)=\int_\Omega(u-u_{ML}(\theta))^2\;\mathrm{d}x,$$
+
+where $u$ is the solution from the physical model and $u_{ML}(\theta)$ is the solution from a hybrid model with some ML parameters $\theta$.
+
+Computing $\mathrm{d}J/\mathrm{d}\theta$ requires differentiating Fortran code as well as ML code.
+
+
+## Implementing AD in FTorch {.smaller}
+
+* Expose `autograd` functionality from Torch.
+    * e.g., `requires_grad` argument and `backward` methods.
+* Overload mathematical operators (`=`,`+`,`-`,`*`,`/`,`**`).
+
+
+## Using AD - FTorch {.smaller}
+
+```fortranfree {code-line-numbers="|6-8|14-16|19|22-23"}
+use ftorch
+
+type(torch_tensor) :: a, b, Q, multiplier, divisor, dQda, dQdb
+real, dimension(2), target :: Q_arr, dQda_arr, dQdb_arr
+
+! Construct input tensors with requires_grad=.true.
+call torch_tensor_from_array(a, [2.0, 3.0], torch_kCPU, requires_grad=.true.)
+call torch_tensor_from_array(b, [6.0, 4.0], torch_kCPU, requires_grad=.true.)
+
+! Workaround for scalar multiplication and division using 0D tensors
+call torch_tensor_from_array(multiplier, [3.0], torch_kCPU)
+call torch_tensor_from_array(divisor, [3.0], torch_kCPU)
+
+! Compute some mathematical expression
+call torch_tensor_from_array(Q, Q_arr, torch_kCPU)
+Q = multiplier * (a**3 - b * b / divisor)
+
+! Reverse mode
+call torch_tensor_backward(Q)
+call torch_tensor_from_array(dQda, dQda_arr, torch_kCPU)
+call torch_tensor_from_array(dQdb, dQdb_arr, torch_kCPU)
+call torch_tensor_get_gradient(a, dQda)
+call torch_tensor_get_gradient(b, dQdb)
+print *, dQda_arr
+print *, dQdb_arr
+```
+
+
+## Optimizers and loss functions {.smaller}
+
+* Optimizers
+    * Expose `torch::optim::SGD`, `torch::optim::AdamW` etc., as well as
+      `zero_grad` and `step` methods.
+    * This already enables some cool AD applications in FTorch.
+* Loss functions
+    * We haven't exposed any built-in loss functions yet.
+    * Implemented `torch_tensor_sum` and `torch_tensor_mean`, though.
+
+
+## Putting it together - running an optimiser in FTorch {.smaller}
+
+$$\begin{bmatrix}f_1\\f_2\\f_3\\f_4\end{bmatrix}=\mathbf{f}(\mathbf{x};\mathbf{a})=\mathbf{a}\bullet\mathbf{x}\equiv\begin{bmatrix}a_1x_1\\a_2x_2\\a_3x_3\\a_4x_4\end{bmatrix}$$
+Starting from $\mathbf{a}=\mathbf{x}:=\begin{bmatrix}1,1,1,1\end{bmatrix}^T$, optimise the $\mathbf{a}$ vector such that $\mathbf{f}(\mathbf{x};\mathbf{a})=\mathbf{b}:=\begin{bmatrix}1,2,3,4\end{bmatrix}^T$.
+
+Loss function: $\ell(\mathbf{a})=\overline{(\mathbf{f}(\mathbf{x};\mathbf{a})-\mathbf{b})^2}$.
+
+
+## Putting it together - running an optimiser in FTorch {.smaller}
+
+![](https://hackmd.io/_uploads/rybqzh961g.png)
+
+In both cases we achieve $\mathbf{f}(\mathbf{x};\mathbf{a})=\begin{bmatrix}1,2,3,4\end{bmatrix}^T$.
+
+
+## Case study - UKCA {.smaller}
+
+* Implicit timestepping, quasi-Newton, full LU decomposition.
+* For each time subinterval to be integrated:
+  * Start with $\Delta t=3600$.
+  * Try to integrate with the current timestep size.
+  * If *any grid-box* fails, half the step and try again.
+* A nice 'safe' application of machine learning in modelling
