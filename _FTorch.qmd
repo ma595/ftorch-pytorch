@@ -361,7 +361,7 @@ call torch_delete(out_tensor)
 ![]( https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg ){.absolute top=16% right=3% height=5%}
 
 
-## GPU Acceleration {.smaller}
+<!-- ## GPU Acceleration {.smaller}
 
 Cast Tensors to GPU in Fortran:
 
@@ -393,7 +393,7 @@ Through developing a nice library it behaves as you would expect it to!
 Familiar to pytorch users.  
 Pointer slinging is largely hidden from users.  
 Data transposition is taken care of by us (but options available for users to handle).
-:::
+::: -->
 
 
 ## Publication & tutorials {.smaller}
