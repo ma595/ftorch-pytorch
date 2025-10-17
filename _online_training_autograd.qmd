@@ -37,7 +37,7 @@ Computing $\mathrm{d}J/\mathrm{d}\theta$ requires differentiating Fortran code a
 * Overload mathematical operators (`=`,`+`,`-`,`*`,`/`,`**`).
 
 
-## Using AD - FTorch {.smaller}
+<!-- ## Using AD - FTorch {.smaller}
 
 ```fortranfree {code-line-numbers="|6-8|14-16|19|22-23"}
 use ftorch
@@ -65,7 +65,7 @@ call torch_tensor_get_gradient(a, dQda)
 call torch_tensor_get_gradient(b, dQdb)
 print *, dQda_arr
 print *, dQdb_arr
-```
+``` -->
 
 
 ## Optimizers and loss functions {.smaller}
@@ -78,7 +78,7 @@ print *, dQdb_arr
     * We haven't exposed any built-in loss functions yet.
     * Implemented `torch_tensor_sum` and `torch_tensor_mean`, though.
 
-
+<!-- 
 ## Putting it together - running an optimiser in FTorch {.smaller}
 
 $$\begin{bmatrix}f_1\\f_2\\f_3\\f_4\end{bmatrix}=\mathbf{f}(\mathbf{x};\mathbf{a})=\mathbf{a}\bullet\mathbf{x}\equiv\begin{bmatrix}a_1x_1\\a_2x_2\\a_3x_3\\a_4x_4\end{bmatrix}$$
@@ -101,4 +101,4 @@ In both cases we achieve $\mathbf{f}(\mathbf{x};\mathbf{a})=\begin{bmatrix}1,2,3
   * Start with $\Delta t=3600$.
   * Try to integrate with the current timestep size.
   * If *any grid-box* fails, half the step and try again.
-* A nice 'safe' application of machine learning in modelling
+* A nice 'safe' application of machine learning in modelling -->
