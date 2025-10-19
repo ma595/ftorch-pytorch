@@ -1,0 +1,408 @@
+## Language interoperation {.smaller}
+
+Many large scientific models are written in Fortran (or C, or C++),
+but machine learning is (mostly) conducted in Python. 
+
+![]( https://upload.wikimedia.org/wikipedia/commons/5/55/Mathematical_Bridge_tangents.jpg ){style="border-radius: 50%;" .absolute top=27% left=30% width=40%}
+
+
+![]( https://www.python.org/static/community_logos/python-logo-generic.svg){.absolute top=40% left=0 width=30%}
+
+<!-- ![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=20%} -->
+
+![](https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png){style="background-image: radial-gradient(gray 30%, #03334E 75%);" .absolute top=65% left=5% width=40%}
+
+
+<!-- ![]( https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/696px-TensorFlowLogo.svg.png?20180105010857 ){.absolute top=65% left=7.5% width=15%} -->
+
+
+
+![]( https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg ){.absolute top=40% right=10% width=10%}
+
+![]( https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/images/about-us/website/mo_master_for_dark_backg_rbg.png ){.absolute top=55% right=0% height=10%}
+
+![]( https://climate.copernicus.eu/sites/default/files/custom-uploads/branding/ECMWF_Master_Logo_RGB_nostrap.png){.absolute top=64.5% left=70% height=5%}
+
+![]( ./images/logos/ICON.png ){style="border-radius: 5%;" .absolute bottom=14.5% right=0 width=10%}
+
+![]( ./images/logos/DWD.jpg ){style="border-radius: 20%;" .absolute bottom=19.5% right=2% width=6%}
+
+![]( https://www2.mmm.ucar.edu/wrf/users/images/wrf_logo.jpg ){.absolute bottom=14.5% right=12.75% width=7%}
+
+![]( https://avatars.githubusercontent.com/u/33552285?s=200&v=4 ){.absolute bottom=14.5% left=70% width=7%}
+
+<!--
+::: {.fragment .fade-in-then-out}
+![]( ./images/Fortran_TIOBE.jpg ){.absolute top=25% width=100%}
+:::
+-->
+
+::: {.attribution}
+[Mathematical Bridge](https://en.wikipedia.org/wiki/Mathematical_Bridge)
+by [cmglee](https://commons.wikimedia.org/wiki/User:Cmglee)
+used under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)  
+PyTorch, the PyTorch logo and any related marks are [trademarks of The Linux Foundation](https://www.linuxfoundation.org/legal/trademark-usage).”  
+<!-- TensorFlow, the TensorFlow logo and any related marks are trademarks of Google Inc. -->
+:::
+
+
+::: {.notes}
+Emulation and data-driven is a focus of several of our projects. 
+CALIPSO, M2LInES, DataWave, etc.  
+Models typically in Fortran  
+ML typically in Python  
+:::
+
+<!-- ::: aside
+Circa. 2022. More solutions emerging as the field grows e.g. TorchFort, Neural-Fortran, FIATS etc.
+<!-- ::: -->
+
+<!-- =============================================================================== -->
+<!-- 
+## FTorch {.smaller}
+
+* *PyTorch* has a C++ backend and provides an API.  
+* Binding Fortran to C is straightforward^[A dangerous word, rather, 'well supported'?] from 2003 using `iso_c_binding`.
+
+We will:
+
+- Provide a Fortran API
+  - wrapping the `libtorch` C++ API
+  - abstracting complex details from users
+- Save the PyTorch models in a portable [Torchscript](https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html) format
+  - to be run by `libtorch` C++
+
+::: {.notes}
+TorchScript is a statically typed subset of Python  
+::: -->
+
+
+
+<!-- ## Efficiency {auto-animate=true, .smaller}
+
+We consider 2 types:
+
+:::: {.columns}
+::: {.column width="50%"}
+Computational
+
+  ![]( https://www.svgrepo.com/show/521584/cpu.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/42898/ram-memory.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/325133/electronics-transister.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/479706/stopwatch.svg ){style="filter: invert(100%)" width=15%}
+:::
+::: {.column}
+Developer
+
+  ![]( https://www.svgrepo.com/show/308093/software-developer-work-on-computer-programmer-coder.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/67720/brain-speech-bubble.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/490654/coffee-maker.svg ){style="filter: invert(100%)" width=15%}
+  ![]( https://www.svgrepo.com/show/479706/stopwatch.svg ){style="filter: invert(100%)" width=15%}
+:::
+
+::: {.column}
+::: {.fragment}
+An ideal solution should:
+
+* not generate excess additional work,
+  * not require advanced computing skills,
+  * have a minimal learning curve,
+* not add excess dependencies,
+* be easy to maintain, and
+* maximise performance.
+:::
+:::
+
+::::
+
+In research both have an effect on 'time-to-science'.\
+Especially when extensive research software support is unavailable.
+
+::: {.notes}
+1. No re-writing net after you have already done and trained
+2. For scientists doing science, not compsci
+3. Run on HPC environments so minimal additional 
+4. Easily keep up to date
+5. Simple to learn and deploy
+6. Needs to be as efficient as possible
+::: -->
+
+
+## Approach {.smaller}
+
+![]( https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg ){.absolute top=10% right=12.5% width=15%}
+
+
+![](https://www.freepngimg.com/thumb/youtube/77810-arrows-marketing-youtube-arrow-red-free-transparent-image-hq.png){.absolute top=20% right=30% width="35%" height="20%"}
+
+![](https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png){.absolute top=40% left=30% height="20%"}
+
+![](https://www.freepngimg.com/thumb/youtube/77810-arrows-marketing-youtube-arrow-red-free-transparent-image-hq.png){style="transform: rotate(270deg);" .absolute top=70% left=30% width="18%" height="10%"}
+
+![](https://www.pngall.com/wp-content/uploads/5/Open-Box-PNG-Clipart.png){.absolute top=18% left=0% height="22%"}
+
+![](https://www.freepngimg.com/thumb/youtube/77810-arrows-marketing-youtube-arrow-red-free-transparent-image-hq.png){style="transform: rotate(270deg);" .absolute top=33% left=14% width="10%" height="25%"}
+
+:::{style="text-align: center; color: black;" .absolute top="27%" left="6.5%"}
+Python  
+env
+:::
+
+:::{style="text-align: center;" .absolute top="44%" left="44%"}
+Python  
+runtime
+:::
+
+![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 75%);" .absolute bottom=12.5% right=5% height=15%}
+
+<!-- ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/696px-TensorFlowLogo.svg.png?20180105010857){.absolute bottom=10% left=82% height=15%} -->
+
+
+::: {.fragment .fade-in-then-semi-out}
+![](https://imgs.xkcd.com/comics/python_environment_2x.png){.absolute bottom=13% left=0% height=70%}
+:::
+
+::: {.attribution}
+[xkcd #1987](https://xkcd.com/1987/)
+by Randall Munroe,
+used under [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)
+:::
+
+::: {.fragment .fade-in}
+![](https://www.freepngimg.com/thumb/youtube/77810-arrows-marketing-youtube-arrow-red-free-transparent-image-hq.png){style="transform: scaleY(-1) rotate(130deg); filter:hue-rotate(150deg);" .absolute top=37% left=78% width="35%" height="20%"}
+:::
+
+<!-- 
+## Highlights - Developer {.smaller auto-animate=true}
+
+:::: {.columns}
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
+
+- Easy to clone and install
+  - CMake, supported on linux/unix and Windows&#8482;
+
+- Easy to link
+  - Build using CMake,
+  - or link via Make like NetCDF (instructions included)\
+    ```
+    FCFLAGS += -I<path/to/install>/include/ftorch
+    LDFLAGS += -L<path/to/install>/lib64 -lftorch
+    ```
+
+:::
+::: {.column width="35%"}
+Find it on {{< fa brands github >}}:
+
+{{< qrcode https://github.com/Cambridge-ICCS/FTorch qrkdjhrbgj width=200 height=200 >}}
+
+[{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
+:::
+:::: -->
+
+## Highlights - Developer {.smaller}
+
+:::: {.columns}
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
+
+::: {.fragment}
+- Easy to build and link using CMake,
+  - or link via Make like NetCDF
+
+- User tools  
+  - [`pt2ts.py`](https://github.com/Cambridge-ICCS/FTorch/tree/main/utils) aids users in saving PyTorch models to Torchscript
+
+- Examples suite  
+  - Take users through full process from trained net to Fortran inference
+
+- Full API documentation online at\
+  [cambridge-iccs.github.io/FTorch](https://cambridge-iccs.github.io/FTorch/)
+
+- FOSS, licensed under MIT  
+  - Contributions via GitHub welcome
+:::
+:::
+::: {.column width="35%"}
+Find it on {{< fa brands github >}}:
+
+{{< qrcode https://github.com/Cambridge-ICCS/FTorch qrfy67whcn width=200 height=200 >}}
+
+[{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
+:::
+::::
+
+
+## Highlights - Computation {.smaller auto-animate=true}
+
+:::: {.columns}
+::: {.column width="65%" style="line-height: 1.8; margin-right: 2em;"}
+::: {.fragment}
+- Use framework's implementations directly  
+  - feature and future support, and reproducible
+
+- Make use of the Torch backends for GPU offload
+  - `CUDA`, `HIP`, `MPS`, and `XPU` enabled
+
+:::
+:::
+::: {.column width="35%"}
+Find it on {{< fa brands github >}}:
+
+{{< qrcode https://github.com/Cambridge-ICCS/FTorch qrv85hgoy9 width=200 height=200 >}}
+
+[{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
+:::
+::::
+
+## Highlights - Computation {.smaller auto-animate=true}
+
+:::: {.columns}
+::: {.column width="65%"}
+
+- Indexing issues and associated reshape^[Or, the great row-major, column-major headache.] avoided with Torch strided accessor.
+- No-copy access in memory (on CPU).
+
+![](./images/f_pt_shared_memory.svg)
+
+:::
+::: {.column width="35%"}
+Find it on {{< fa brands github >}}:
+
+{{< qrcode https://github.com/Cambridge-ICCS/FTorch qrv5hgeo9t width=200 height=200 >}}
+
+[{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
+:::
+::::
+
+
+## Saving model from Python {.smaller}
+
+<!-- ```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"} -->
+```{.python .code-overflow-wrap }
+import torch
+import torchvision
+
+# Load pre-trained model and put in eval mode
+model = torchvision.models.resnet18(weights="IMAGENET1K_V1")
+model.eval()
+
+# Create dummmy input
+dummy_input = torch.ones(1, 3, 224, 224)
+
+# Save to TorchScript
+if trace:
+    ts_model = torch.jit.trace(model, dummy_input)
+elif script:
+    ts_model = torch.jit.script(model)
+frozen_model = torch.jit.freeze(ts_model)
+frozen_model.save("/path/to/saved_model.pt")
+```
+
+![]( https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png ){.absolute top=15% right=3% height=6%}
+
+TorchScript
+
+- Statically typed subset of Python
+- Read by the Torch C++ interface (or any Torch API)
+- Produces intermediate representation/graph of NN, including weights and biases
+- `trace` for simple models, `script` more generally
+- Soon to be deprecated - ONNX? 
+
+
+## Fortran
+
+:::{style="font-size: 0.7em"}
+```fortranfree {code-line-numbers="|1|7,11-15|8,17|18|22-25"}
+ use ftorch
+ 
+ implicit none
+ 
+ real, dimension(5), target :: in_data, out_data  ! Fortran data structures
+ 
+ type(torch_tensor), dimension(1) :: input_tensors, output_tensors  ! Set up Torch data structures
+ type(torch_model) :: torch_net
+ integer, dimension(1) :: tensor_layout = [1]
+ 
+ in_data = ...  ! Prepare data in Fortran
+ 
+ ! Create Torch input/output tensors from the Fortran arrays
+ call torch_tensor_from_array(input_tensors(1), in_data, torch_kCPU)
+ call torch_tensor_from_array(output_tensors(1), out_data, torch_kCPU)
+ 
+ call torch_model_load(torch_net, 'path/to/saved/model.pt', torch_kCPU)  ! Load ML model
+ call torch_model_forward(torch_net, input_tensors, output_tensors)      ! Infer
+ 
+ call further_code(out_data)  ! Use output data in Fortran immediately
+ 
+ ! Cleanup
+call torch_delete(model)
+call torch_delete(in_tensors)
+call torch_delete(out_tensor)
+```
+:::
+
+![]( https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg ){.absolute top=16% right=3% height=5%}
+
+
+<!-- ## GPU Acceleration {.smaller}
+
+Cast Tensors to GPU in Fortran:
+
+```{.fortranfree .code-overflow-wrap .code-overflow-wrap code-line-numbers="|5|6|"}
+! Load in from Torchscript
+call torch_model_load(torch_net, 'path/to/saved/model.pt', torch_kCUDA, device_index=0)
+
+! Cast Fortran data to Tensors
+call torch_tensor_from_array(in_tensor(1), in_data, torch_kCUDA, device_index=0)
+call torch_tensor_from_array(out_tensor(1), out_data, torch_kCPU)
+```
+
+![]( https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg ){.absolute top=21% right=3% height=5%}
+
+\
+\
+
+FTorch supports NVIDIA `CUDA`, ARM `HIP`, Intel `XPU`, and AppleSilicon `MPS` hardwares.
+
+Use of multiple devices supported.
+
+\
+
+Effective HPC simulation requires `MPI_Gather()` for efficient data transfer.
+
+
+::: {.notes}
+Through developing a nice library it behaves as you would expect it to!  
+Familiar to pytorch users.  
+Pointer slinging is largely hidden from users.  
+Data transposition is taken care of by us (but options available for users to handle).
+::: -->
+
+<!-- 
+## Publication & tutorials {.smaller}
+
+
+FTorch is published in JOSS!
+
+Please cite if you use FTorch.
+
+\
+
+:::: {.columns}
+::: {.column width="35%"}
+![]( ./images/logos/JOSS_logo.jpg){width=90%}
+:::
+
+::: {.column width="65%"}
+@Atkinson2025
+
+FTorch: a library for coupling PyTorch models to Fortran.\
+_Journal of Open Source Software_, 10(107), 7602,\
+[doi.org/10.21105/joss.07602](https://doi.org/10.21105/joss.07602)
+:::
+::::
+
+\
+
+In addition to the comprehensive examples in the FTorch repository we
+provide an online workshop at [{{< fa brands github >}}/Cambridge-ICCS/FTorch-workshop](https://github.com/Cambridge-ICCS/FTorch-workshop) -->
+

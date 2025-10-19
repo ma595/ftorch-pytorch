@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="144.99129mm"
+   height="138.60158mm"
+   viewBox="0 0 144.99129 138.60158"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="nested_NN.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.86956157"
+     inkscape:cx="454.82691"
+     inkscape:cy="312.80131"
+     inkscape:window-width="1448"
+     inkscape:window-height="867"
+     inkscape:window-x="12"
+     inkscape:window-y="49"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(8.4536899,-4.4514486)">
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#ffffff;stroke-width:0.450257;stroke-opacity:1"
+       id="rect3-5"
+       width="144.54103"
+       height="138.15132"
+       x="-8.2285614"
+       y="4.6765771" />
+    <rect
+       style="fill:#808080;fill-opacity:1;stroke:#ffffff;stroke-width:0.34938;stroke-opacity:1"
+       id="rect3"
+       width="109.65062"
+       height="109.65062"
+       x="9.2166443"
+       y="26.864426" />
+    <rect
+       style="fill:#0000ff;fill-opacity:1;stroke:#ffffff;stroke-width:0.381686;stroke-opacity:1"
+       id="rect2"
+       width="79.618309"
+       height="79.618317"
+       x="24.2328"
+       y="49.818085" />
+    <rect
+       style="fill:#000000;stroke:#ffffff;stroke-width:0.401337;stroke-opacity:1"
+       id="rect1"
+       width="49.598663"
+       height="49.598663"
+       x="39.242622"
+       y="72.765419" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.05556px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.389001"
+       x="64.095352"
+       y="84.875664"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.389"
+         x="64.095352"
+         y="84.875664">NN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.05556px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.389001"
+       x="63.928265"
+       y="62.227543"
+       id="text1-9"><tspan
+         sodipodi:role="line"
+         id="tspan1-0"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.389"
+         x="63.928265"
+         y="62.227543">Physics Layer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.05556px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.389001"
+       x="63.9231"
+       y="39.290035"
+       id="text1-9-6"><tspan
+         sodipodi:role="line"
+         id="tspan1-0-4"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.389"
+         x="63.9231"
+         y="39.290035">Interface</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:7.05556px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389001"
+       x="64.291725"
+       y="16.857235"
+       id="text1-9-6-9"><tspan
+         sodipodi:role="line"
+         id="tspan1-0-4-2"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389"
+         x="64.291725"
+         y="16.857235">Numerical Model</tspan></text>
+  </g>
+</svg>
