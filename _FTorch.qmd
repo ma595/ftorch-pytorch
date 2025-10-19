@@ -305,6 +305,7 @@ TorchScript
 - Read by the Torch C++ interface (or any Torch API)
 - Produces intermediate representation/graph of NN, including weights and biases
 - `trace` for simple models, `script` more generally
+- Soon to be deprecated - ONNX? 
 
 
 ## Fortran
