@@ -54,19 +54,19 @@ Globe grid with box by Caltech under Fair use
 We typically think of Deep Learning as an end-to-end process;  
 a black box with an input and an output^[And some models like GraphCast, Aurora, and Pangu operate on this principle].
 
-![]( ./images/neural_net_3b1b.jpeg ){style="border-radius: 50%;" .absolute top=39% left=35% width=30% height=32%}
+![]( ./images/neural_net_3b1b.jpeg ){style="border-radius: 50%;" .absolute top=39% left=65% width=30% height=32%}
 
 
 
-![]( ./images/pikachu.png ){.absolute top=37.5% left=5.5% width=25%}
-[Who's that Pokémon?]{.absolute top=32.5% left=4% width=25% style="text-align:center;"}
+![]( ./images/Aurora_Fig1.png ){.absolute top=37.5% left=5.5% width=55%}
+[]{.absolute top=32.5% left=4% width=45% style="text-align:center;"}
 
-[$$\begin{bmatrix}\vdots\\a_{23}\\a_{24}\\a_{25}\\a_{26}\\a_{27}\\\vdots\\\end{bmatrix}=\begin{bmatrix}\vdots\\0\\0\\1\\0\\0\\\vdots\\\end{bmatrix}$$]{.absolute top=30% right=8.5% width=25%}
-[It's Pikachu!]{.absolute top=27.5% right=8.5% width=25% style="text-align:center;"}
+<!-- [$$\begin{bmatrix}\vdots\\a_{23}\\a_{24}\\a_{25}\\a_{26}\\a_{27}\\\vdots\\\end{bmatrix}=\begin{bmatrix}\vdots\\0\\0\\1\\0\\0\\\vdots\\\end{bmatrix}$$]{.absolute top=30% right=8.5% width=25%}
+[It's Pikachu!]{.absolute top=27.5% right=8.5% width=25% style="text-align:center;"} -->
 
 ::: {.attribution}
 Neural Net by [3Blue1Brown]( https://www.3blue1brown.com/topics/neural-networks ) under [*fair dealing*](https://www.gov.uk/guidance/exceptions-to-copyright).  
-Pikachu &#169; *The Pokemon Company*, used under [*fair dealing*]( https://www.gov.uk/guidance/exceptions-to-copyright ).
+<!-- Pikachu &#169; *The Pokemon Company*, used under [*fair dealing*]( https://www.gov.uk/guidance/exceptions-to-copyright ). -->
 :::
 
 
@@ -78,7 +78,7 @@ Pikachu &#169; *The Pokemon Company*, used under [*fair dealing*]( https://www.g
 
 ::: {.attribution}
 Neural Net by [3Blue1Brown]( https://www.3blue1brown.com/topics/neural-networks ) under [*fair dealing*](https://www.gov.uk/guidance/exceptions-to-copyright).  
-Pikachu &#169; *The Pokemon Company*, used under [*fair dealing*]( https://www.gov.uk/guidance/exceptions-to-copyright ).
+<!-- Pikachu &#169; *The Pokemon Company*, used under [*fair dealing*]( https://www.gov.uk/guidance/exceptions-to-copyright ). -->
 :::
 
 ::: {.notes}
