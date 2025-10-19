@@ -4,7 +4,7 @@
 
 ::: {.column width="50%"}
 ::: {.fragment .semi-fade-out}
-### 🌍 MiMA – Proof of Concept {style="font-size: 1.1em;"}
+### MiMA : Proof of Concept {style="font-size: 1.1em;"}
 
 - First use of FTorch ideas  
 - Machine-learning parameterisation in a simple climate model  
@@ -17,7 +17,7 @@
 
 ::: {.column width="50%"}
 ::: {.fragment}
-### ☁️ CESM – Large-Scale Integration {style="font-size: 1.1em;"}
+### CESM : Large-Scale Integration {style="font-size: 1.1em;"}
 
 - FTorch now part of **Community Earth System Model (CESM)**  
 - Integrated via **CIME** build system  
