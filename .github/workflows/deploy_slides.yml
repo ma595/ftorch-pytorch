@@ -31,6 +31,8 @@ jobs:
       
       - name: Render Quarto Project
         run: |
+          quarto add quarto-ext/attribution
+
           quarto render pytorch-FTorch.qmd
           cd ../
 
