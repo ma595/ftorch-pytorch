@@ -1,14 +1,14 @@
 ## Language interoperation {.smaller}
 
-Many large scientific models are written in Fortran (or C, or C++).  
-Much machine learning is conducted in Python. 
+Many large scientific models are written in Fortran (or C, or C++),
+but machine learning is (mostly) conducted in Python. 
 
 ![]( https://upload.wikimedia.org/wikipedia/commons/5/55/Mathematical_Bridge_tangents.jpg ){style="border-radius: 50%;" .absolute top=27% left=30% width=40%}
 
 
 ![]( https://www.python.org/static/community_logos/python-logo-generic.svg){.absolute top=40% left=0 width=30%}
 
-Vgc![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=20%}
+![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=20%}
 
 ![](https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=40%}
 
@@ -64,6 +64,7 @@ ML typically in Python
     - No longer maintained
     - Developer learning curve
     - Hard to use with ML
+  - Recently, **TorchFort** by Nvidia
 :::
 
 <!-- ::: aside
@@ -72,21 +73,18 @@ Circa. 2022. More solutions emerging as the field grows e.g. TorchFort, Neural-F
 
 <!-- =============================================================================== -->
 
-
-# FTorch {.smaller}
-
-## Approach {.smaller}
+## FTorch {.smaller}
 
 * *PyTorch* has a C++ backend and provides an API.  
 * Binding Fortran to C is straightforward^[A dangerous word, rather, 'well supported'?] from 2003 using `iso_c_binding`.
 
 We will:
 
-- Save the PyTorch models in a portable [Torchscript](https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html) format
-  - to be run by `libtorch` C++
 - Provide a Fortran API
   - wrapping the `libtorch` C++ API
   - abstracting complex details from users
+- Save the PyTorch models in a portable [Torchscript](https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html) format
+  - to be run by `libtorch` C++
 
 ::: {.notes}
 TorchScript is a statically typed subset of Python  
@@ -94,7 +92,7 @@ TorchScript is a statically typed subset of Python
 
 
 
-## Efficiency {auto-animate=true, .smaller}
+<!-- ## Efficiency {auto-animate=true, .smaller}
 
 We consider 2 types:
 
@@ -115,7 +113,7 @@ Developer
   ![]( https://www.svgrepo.com/show/490654/coffee-maker.svg ){style="filter: invert(100%)" width=15%}
   ![]( https://www.svgrepo.com/show/479706/stopwatch.svg ){style="filter: invert(100%)" width=15%}
 :::
-<!--
+
 ::: {.column}
 ::: {.fragment}
 An ideal solution should:
@@ -128,7 +126,7 @@ An ideal solution should:
 * maximise performance.
 :::
 :::
--->
+
 ::::
 
 In research both have an effect on 'time-to-science'.\
@@ -141,7 +139,7 @@ Especially when extensive research software support is unavailable.
 4. Easily keep up to date
 5. Simple to learn and deploy
 6. Needs to be as efficient as possible
-:::
+::: -->
 
 
 ## Approach {.smaller}
@@ -169,9 +167,9 @@ Python
 runtime
 :::
 
-![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 75%);" .absolute bottom=12.5% right=22% height=10%}
+![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 75%);" .absolute bottom=12.5% right=5% height=15%}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/696px-TensorFlowLogo.svg.png?20180105010857){.absolute bottom=10% left=82% height=15%}
+<!-- ![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/696px-TensorFlowLogo.svg.png?20180105010857){.absolute bottom=10% left=82% height=15%} -->
 
 
 ::: {.fragment .fade-in-then-semi-out}
@@ -233,9 +231,8 @@ Find it on {{< fa brands github >}}:
 - Full API documentation online at\
   [cambridge-iccs.github.io/FTorch](https://cambridge-iccs.github.io/FTorch/)
 
-- FOSS  
-  - licensed under MIT  
-  - contributions from users via GitHub welcome
+- FOSS, licensed under MIT  
+  - Contributions via GitHub welcome
 :::
 :::
 ::: {.column width="35%"}
@@ -258,9 +255,6 @@ Find it on {{< fa brands github >}}:
 
 - Make use of the Torch backends for GPU offload
   - `CUDA`, `HIP`, `MPS`, and `XPU` enabled
-
-- Indexing issues and associated reshape^[Or, the great row-major, column-major headache.] avoided with Torch strided accessor.
-- No-copy access in memory (on CPU).
 
 :::
 :::
@@ -296,7 +290,8 @@ Find it on {{< fa brands github >}}:
 
 ## Model - Saving model from Python {.smaller}
 
-```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"}
+<!-- ```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"} -->
+```{.python .code-overflow-wrap }
 import torch
 import torchvision
 
