@@ -8,9 +8,9 @@ but machine learning is (mostly) conducted in Python.
 
 ![]( https://www.python.org/static/community_logos/python-logo-generic.svg){.absolute top=40% left=0 width=30%}
 
-![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=20%}
+<!-- ![]( https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png ){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=20%} -->
 
-![](https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png){style="background-image: radial-gradient(gray 0%, #03334E 100%);" .absolute top=55% left=5% width=40%}
+![](https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.png){style="background-image: radial-gradient(gray 30%, #03334E 75%);" .absolute top=65% left=5% width=40%}
 
 
 <!-- ![]( https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/696px-TensorFlowLogo.svg.png?20180105010857 ){.absolute top=65% left=7.5% width=15%} -->
@@ -53,26 +53,12 @@ Models typically in Fortran
 ML typically in Python  
 :::
 
-## Possible solutions {auto-animate=true, .smaller}
-::: {.fragment}
-- **Implement a NN in Fortran**
-  - Additional work, reproducibility issues, hard for complex architectures
-:::
-::: {.fragment}
-- **Forpy**, **SmartSim**, **Fortran-Keras Bridge**
-  - Various issues
-    - No longer maintained
-    - Developer learning curve
-    - Hard to use with ML
-  - Recently, **TorchFort** by Nvidia
-:::
-
 <!-- ::: aside
 Circa. 2022. More solutions emerging as the field grows e.g. TorchFort, Neural-Fortran, FIATS etc.
 <!-- ::: -->
 
 <!-- =============================================================================== -->
-
+<!-- 
 ## FTorch {.smaller}
 
 * *PyTorch* has a C++ backend and provides an API.  
@@ -88,7 +74,7 @@ We will:
 
 ::: {.notes}
 TorchScript is a statically typed subset of Python  
-:::
+::: -->
 
 
 
@@ -288,7 +274,7 @@ Find it on {{< fa brands github >}}:
 ::::
 
 
-## Model - Saving model from Python {.smaller}
+## Saving model from Python {.smaller}
 
 <!-- ```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"} -->
 ```{.python .code-overflow-wrap }
