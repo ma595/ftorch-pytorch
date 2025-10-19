@@ -6,9 +6,9 @@ name: BuildPages
 on:
   # Triggers the workflow on push or pull request events but only for "main-real" branch
   pull_request:
-    branches: [ "main-real" ]
+    branches: [ "main" ]
   push:
-    branches: [ "main-real" ]
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,8 +31,7 @@ jobs:
       
       - name: Render Quarto Project
         run: |
-          cd slides
-          quarto render git_for_science.qmd
+          quarto render pytorch-ftorch.qmd
           cd ../
 
       - name: Test pages build
