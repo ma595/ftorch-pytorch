@@ -35,6 +35,8 @@ jobs:
         run: |
           # This takes an unreasonably long time
           quarto add --no-prompt quarto-ext/attribution
+          quarto add quarto-ext/fontawesome
+          quarto add quarto-ext/qrcode
 
           quarto render pytorch-FTorch.qmd
 
