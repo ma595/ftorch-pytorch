@@ -37,7 +37,6 @@ jobs:
           quarto add --no-prompt quarto-ext/attribution
 
           quarto render pytorch-FTorch.qmd
-          cd ../
 
       - name: Test pages build
         if: github.ref != 'refs/heads/main'
