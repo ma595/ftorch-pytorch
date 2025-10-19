@@ -31,7 +31,7 @@ jobs:
       
       - name: Render Quarto Project
         run: |
-          quarto render pytorch-ftorch.qmd
+          quarto render pytorch-FTorch.qmd
           cd ../
 
       - name: Test pages build
