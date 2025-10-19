@@ -1,6 +1,6 @@
-## The ICCS
+<!-- ## The ICCS
 
-<!-- ! ## The ICCS^[For more details see poster 14 *International RSE collaboration with the ICCS and the VESRI*] {.smaller} -->
+! ## The ICCS^[For more details see poster 14 *International RSE collaboration with the ICCS and the VESRI*] {.smaller}
 
 The Institute of Computing for Climate Science
 
@@ -11,7 +11,7 @@ The Institute of Computing for Climate Science
 
 ::: {.notes}
 My background in this is ML and numerical modelling on HPC. 
-:::
+::: -->
 
 ## Weather and Climate Models {.smaller}
 
@@ -47,7 +47,6 @@ Subgrid processes are largest source of uncertainty
 Microphysics by Sisi Chen Public Domain\
 Staggered grid by NOAA under Public Domain\
 Globe grid with box by Caltech under Fair use
-kkkkkk
 :::
 
 ## Machine Learning in Science {.smaller}
@@ -56,6 +55,8 @@ We typically think of Deep Learning as an end-to-end process;
 a black box with an input and an output^[And some models like GraphCast, Aurora, and Pangu operate on this principle].
 
 ![]( ./images/neural_net_3b1b.jpeg ){style="border-radius: 50%;" .absolute top=39% left=35% width=30% height=32%}
+
+
 
 ![]( ./images/pikachu.png ){.absolute top=37.5% left=5.5% width=25%}
 [Who's that Pokémon?]{.absolute top=32.5% left=4% width=25% style="text-align:center;"}
@@ -93,12 +94,12 @@ Additional challenges:
 :::
 
 
-## Challenges {.smaller}
+<!-- ## Challenges {.smaller}
 
 - Reproducibility
   - Ensure net functions the same in-situ
 - Re-usability
   - Make ML parameterisations available to many models
   - Facilitate easy re-training/adaptation
-- Language Interoperation
+- Language Interoperation -->
 
