@@ -4,21 +4,22 @@ title: "<br><br>A Library To Couple PyTorch ML Models With Fortran Climate Model
 format:
   revealjs:
     embed-resources: false
-    slide-number: false
     chalkboard: false
     preview-links: auto
     history: false
     highlight-style: a11y
     code-overflow: wrap
-    code-line-numbers: false
+    code-line-numbers: true
     logo: https://iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png
     theme: [dark, custom.scss]
+    preview: true
+    slide-number: true
 revealjs-plugins:
   - attribution
 authors:
   - name: Matt Archer
-    orcid: 0000-0001-5001-4812
-    affiliations: Senior Research Software Engineer <br> ICCS - University of Cambridge
+    orcid: 0009-0002-7043-6769
+    affiliations: Senior Research Software Engineer <br> `ICCS` - `I`nstitute of `C`omputing for `C`limate `S`cience <br> University of Cambridge
   # - name: Jack Atkinson
   #   orcid: 0000-0001-5001-4812
   #   affiliations: Senior Research Software Engineer <br> ICCS - University of Cambridge
@@ -48,7 +49,6 @@ include-in-header:
       }
       </style>
 ---
-
 <!-- ## Precursors {.smaller .nostretch} -->
 
 <!-- :::: {.columns} -->
@@ -88,7 +88,7 @@ include-in-header:
 
 {{< include _FTorch.qmd >}}
 
-{{< include _case_studies.qmd >}}
+<!-- {{< include _case_studies.qmd >}} -->
 
 <!-- =============================================================================== -->
 
@@ -103,14 +103,14 @@ include-in-header:
   - A growing area that presents challenges
 - Language interoperation
   - FTorch provides a solution for scientists implementing torch models in Fortran
-  - Designed for computational _and_ developer efficiency
+  - Designed for **computational** _and_ **developer** efficiency
   - Has helped deliver science in climate research and beyond\
     see @heuer2023interpretable, @mansfield2024uncertainty and more.
-  - Built into CESM to allow the userbase access
+  <!-- - Built into CESM to allow the userbase access -->
 - Exploring options for online training and AD
   - Torch `autograd` and `optimizer` exposed using `iso_c_binding`.
   - Work in progress on setting up online ML training.
-
+- Moving away from TorchScript...
 
 <!-- =============================================================================== -->
 
@@ -132,6 +132,19 @@ Get in touch:
 
 <!-- {{< fa brands mastodon >}} \ [\@jatkinson1000\@hachyderm.io](https://hachyderm.io/@jatkinson1000) -->
 :::
+::: {.column style="width: 40%; font-size: 85%;"}
+{{< fa pencil >}} \ Jack Atkinson
+
+{{< fa solid globe >}} \ [jackatkinson.net](https://jackatkinson.net)
+
+{{< fa solid envelope >}} \ [jwa34[AT]cam.ac.uk](mailto:jwa34@cam.ac.uk)
+
+{{< fa brands github >}} \ [jatkinson1000](https://github.com/jatkinson1000)
+
+{{< fa brands mastodon >}} \ [\@jatkinson1000\@hachyderm.io](https://hachyderm.io/@jatkinson1000)
+:::
+
+
 <!-- ::: {.column style="width: 40%; font-size: 85%;"}
 {{< fa pencil >}} \ Joe Wallwork
 
@@ -148,8 +161,8 @@ Get in touch:
 :::: {.columns}
 
 ::: {.column style="width:70%;"}
-Thanks to Jack Atkinson, Tom Meltzer, Elliott Kasoar, Niccolò Zanotti\
-and the rest of the FTorch team.
+Thanks to `Jack Atkinson`, `Joe Wallwork`, Tom Meltzer, \
+Elliott Kasoar, Niccolò Zanotti and the rest of the FTorch team.
 
 The ICCS received support from ![]( ./images/logos/schmidt_science.png ){height=2.4em style="margin: 0; vertical-align: -2%"}
 
@@ -158,7 +171,7 @@ FTorch has been supported by ![]( ./images/logos/c2d3_logo.png ){height=1.4em st
 ::: {.column style="width:30%; font-size: 85%;"}
 [{{< fa brands github >}}/Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch)
 
-{{< qrcode https://github.com/Cambridge-ICCS/FTorch ghrbgcduwi width=150 height=150 >}}
+{{< qrcode https://github.com/Cambridge-ICCS/FTorch width=150 height=150 >}}
 :::
 ::::
 
