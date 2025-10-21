@@ -58,7 +58,7 @@ Circa. 2022. More solutions emerging as the field grows e.g. TorchFort, Neural-F
 <!-- ::: -->
 
 <!-- =============================================================================== -->
-<!-- 
+
 ## FTorch {.smaller}
 
 * *PyTorch* has a C++ backend and provides an API.  
@@ -74,7 +74,7 @@ We will:
 
 ::: {.notes}
 TorchScript is a statically typed subset of Python  
-::: -->
+:::
 
 
 

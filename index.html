@@ -373,23 +373,39 @@ ML typically in Python</p>
 Circa. 2022. More solutions emerging as the field grows e.g. TorchFort, Neural-Fortran, FIATS etc.
 <!-- ::: -->
 <!-- =============================================================================== -->
-<!-- 
-## FTorch {.smaller}
-
-* *PyTorch* has a C++ backend and provides an API.  
-* Binding Fortran to C is straightforward^[A dangerous word, rather, 'well supported'?] from 2003 using `iso_c_binding`.
-
-We will:
-
-- Provide a Fortran API
-  - wrapping the `libtorch` C++ API
-  - abstracting complex details from users
-- Save the PyTorch models in a portable [Torchscript](https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html) format
-  - to be run by `libtorch` C++
-
-::: {.notes}
-TorchScript is a statically typed subset of Python  
-::: -->
+</section>
+<section id="ftorch" class="slide level2 smaller">
+<h2>FTorch</h2>
+<ul>
+<li><em>PyTorch</em> has a C++ backend and provides an API.<br>
+</li>
+<li>Binding Fortran to C is straightforward<sup>1</sup> from 2003 using <code>iso_c_binding</code>.</li>
+</ul>
+<p>We will:</p>
+<ul>
+<li>Provide a Fortran API
+<ul>
+<li>wrapping the <code>libtorch</code> C++ API</li>
+<li>abstracting complex details from users</li>
+</ul></li>
+<li>Save the PyTorch models in a portable <a href="https://pytorch.org/tutorials/beginner/Intro_to_TorchScript_tutorial.html">Torchscript</a> format
+<ul>
+<li>to be run by <code>libtorch</code> C++</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>TorchScript is a statically typed subset of Python</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- ## Efficiency {auto-animate=true, .smaller}
 
 We consider 2 types:
@@ -438,7 +454,7 @@ Especially when extensive research software support is unavailable.
 5. Simple to learn and deploy
 6. Needs to be as efficient as possible
 ::: -->
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>A dangerous word, rather, ‘well supported’?</p></li></ol></aside></section>
 <section id="approach" class="slide level2 smaller">
 <h2>Approach</h2>
 <p><img data-src="https://raw.githubusercontent.com/fortran-lang/fortran-lang.org/bbdc33ec7bfc06fa6111093ae9712a7f7837b555/assets/img/fortran-logo.svg" class="absolute" style="top: 10%; right: 12.5%; width: 15%; "></p>
@@ -588,7 +604,7 @@ Find it on :
     
 <p><a href="https://github.com/Cambridge-ICCS/FTorch"><i class="fa-brands fa-github" aria-label="github"></i>/Cambridge-ICCS/FTorch</a></p>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Or, the great row-major, column-major headache.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Or, the great row-major, column-major headache.</p></li></ol></aside></section>
 <section id="saving-model-from-python" class="slide level2 smaller">
 <h2>Saving model from Python</h2>
 <!-- ```{.python .code-overflow-wrap code-line-numbers="|4-6|11,12-13|11,14-15|16-17"} -->
