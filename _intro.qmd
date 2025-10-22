@@ -62,3 +62,11 @@ Globe grid with box by Caltech under Fair use
 ::: {.attribution}
 Neural Net by [3Blue1Brown]( https://www.3blue1brown.com/topics/neural-networks ) under [*fair dealing*](https://www.gov.uk/guidance/exceptions-to-copyright).
 :::
+
+## End-to-End {.smaller }
+
+![]( ./images/AURORA_Fig1.png )
+
+::: {.attribution}
+https://www.microsoft.com/en-us/research/project/aurora-forecasting/
+:::
