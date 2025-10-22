@@ -334,9 +334,9 @@ TorchScript
  call further_code(out_data)  ! Use output data in Fortran immediately
  
  ! Cleanup
-call torch_delete(model)
-call torch_delete(in_tensors)
-call torch_delete(out_tensor)
+ call torch_delete(model)
+ call torch_delete(in_tensors)
+ call torch_delete(out_tensor)
 ```
 :::
 
